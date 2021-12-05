@@ -12,6 +12,15 @@ body{
     width: 20%;
 }
 
+.w-12{
+    width: 12%;
+}
+
+::placeholder{
+    color: #c9c9c9;
+
+  }
+
 /* ################ UTILITY CLASSES #################### */
 
 span{
@@ -45,6 +54,10 @@ label{
 
 /* #############TIMER SECTION############### */
 
+.left-nav{
+    z-index: 2;
+}
+
 .timer-bg-box{
     border: 3px solid rgb(143, 142, 142);
     border-radius: 20px;
@@ -68,13 +81,11 @@ margin: 10px 0px;
 /* ################ Timer Settings menu #################### */
 
 .menu{
-    display: block;
     padding: 20px;
-    background-color: var(--dark);
     border-radius: 10px;
     position: absolute;
     top:0px;
-    left:430px;
+    left:450px;
     visibility: hidden;
 }
 
@@ -89,22 +100,37 @@ margin: 10px 0px;
     margin: 20px auto;
     cursor: pointer;
     text-align: center !important;
-    
+}
 
+.p_sets{
+    padding: 20px 0px;
+}
+.b_sets{
+    padding: 15px 0px;
+}
+
+.input-style{
+    appearance: none;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    width: 65px;
 }
 
 .timer-volume{
-    margin: 20px 0px 0px 0px;
+    padding: 20px 0px;
 }
 
-#timer{
-    font-size: 14px;
-}
 
-.fa-volume-up{
-    float: right;
-}
-
-.fa-volume-mute{
-    float: right;
+/* video section */
+.vid{
+    position: fixed;
+    left:400px;
+    top:0px;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    z-index: -20;
+    
 }

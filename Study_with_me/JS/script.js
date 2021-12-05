@@ -1,10 +1,10 @@
-var tm=document.getElementById("t_min");
-var ts=document.getElementById("t_sec");
-var bm=document.getElementById("b_min");
-var bs=document.getElementById("b_sec");
+let tm=document.getElementById("t_min");
+let ts=document.getElementById("t_sec");
+let bm=document.getElementById("b_min");
+let bs=document.getElementById("b_sec");
 
-var startpause=document.getElementById("startpause");
-var reset=document.getElementById("reset");
+let startpause=document.getElementById("startpause");
+let reset=document.getElementById("reset");
 
 var sBtn=document.getElementById("settings");
 var save=document.getElementById("save");
@@ -56,8 +56,10 @@ let timerbell=true;
 function timer(){
     //pomodoro timing
     if (ts.innerText !=0){
-         ts.innerText--;
-    }else if(tm.innerText!=0 && ts.innerText==0){
+        ts.innerText--;
+
+    }
+    else if(tm.innerText!=0 && ts.innerText==0){
         ts.innerText=59;
         tm.innerText--;
     }
@@ -81,6 +83,7 @@ function timer(){
         resettimer();
     }
 }
+
 
 sBtn.addEventListener('click',function(){
     const toggleMenu=document.querySelector(".menu");
@@ -125,7 +128,7 @@ timerAudio.muted=true;
 
 function playAudio(){
     
-    if (volumeIcon.className !="fas fa-volume-mute fa-2x"){
+    if (volumeIcon.className !="fas fa-volume-mute fa-2x col-2 p-0"){
         timerAudio.play();
         timerAudio.muted=false;
     }
@@ -139,11 +142,11 @@ function playAudio(){
 
 volumeIcon.addEventListener('click',function(){
     if (timerAudio.muted){
-        volumeIcon.className="fas fa-volume-mute fa-2x";
+        volumeIcon.className="fas fa-volume-mute fa-2x col-2 p-0";
         timerAudio.muted=false;
     }
     else{
-        volumeIcon.className="fas fa-volume-up fa-2x";
+        volumeIcon.className="fas fa-volume-up fa-2x col-2 p-0";
         timerAudio.muted=true;
     }
 

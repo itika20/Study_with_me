@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="container-fluid ">
-      <div class="row min-vh-100 w-20 bg-danger">
+      <div class="row left-nav min-vh-100 w-20 bg-danger">
 
         <!-- timer section -->
 
@@ -56,27 +56,35 @@
         </div>
       </div>
 
+      <!-- Video Section -->
+      <video autoplay muted loop id="myVideo" class="w-100 min-vh-100 vid">
+        <source src="video/study with me.mp4" type="video/mp4">
+      </video>
+
         <!-- settings menu -->
-        <div class="menu">
-          <p class="timer-settings">Timer Settings</p>
-          <div class="p_sets">
-             <label class="p-settings">Pomodoro</label>
-             <input id="ptime" type="number" placeholder="00" min="01" max="60">
-          </div>
-          <div class="b_sets">
-             <label class="b-settings">Break</label>
-             <input id="btime" type="number" placeholder="00" min="01" max="60">
-          </div>
-          <div class="timer-volume">
-             <span id="timer">Timer Volume</span>
-             <audio id="timer-audio"
+        <div class="row bg-danger w-12 menu">
+          <span class="p-0 text-primary">Timer Settings</span>
+        
+            <div class="row p_sets">
+              <label class=" col-8 p-settings text-info">Pomodoro</label>
+              <input class="col-4 bg-secondary input-style text-info" id="ptime" type="number" placeholder="00" min="01" max="60">
+            </div>
+           <div class="row b_sets">
+              <label class="col-8 text-info b-settings">Break</label>
+              <input class="col-4 bg-secondary input-style text-info w-40 " id="btime" type="number" placeholder="00" min="01" max="60">
+           </div>
+          
+          <div class="row timer-volume">
+             <label class="col-8 text-info" id="timer">Timer Volume</label>
+             <audio class="col-2" id="timer-audio"
                 src="https://assets.mixkit.co/sfx/preview/mixkit-repeating-arcade-beep-1084.mp3"></audio>
-             <i class="fas fa-volume-up fa-2x" id="volume-icon"></i>
+             <i class="fas fa-volume-up fa-2x col-2 p-0" id="volume-icon"></i>
           </div>
           <button id="save" class="btn btn-primary save">Save</button>
-       </div>
+        </div>
 
-      
+
+
     </div>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
