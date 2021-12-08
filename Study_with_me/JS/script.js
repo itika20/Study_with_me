@@ -15,8 +15,9 @@ let pt, bt;
 let volumeIcon =document.getElementById("volume-icon");
 let timerAudio=document.getElementById("timer-audio");
 
-let startTimer;
+//Pomodoro timer section
 
+let startTimer;
 startpause.addEventListener('click', function(){
     if(startTimer === undefined){
         startTimer = setInterval(timer, 1000)
@@ -84,12 +85,13 @@ function timer(){
     }
 }
 
-
+//menu open close button code
 sBtn.addEventListener('click',function(){
     const toggleMenu=document.querySelector(".menu");
     toggleMenu.classList.toggle("active");
 })
 
+//change time from settings
 save.addEventListener('click',function(){
     change_time();
 })
@@ -139,7 +141,6 @@ function playAudio(){
 }
 
 //mute unmote button code
-
 volumeIcon.addEventListener('click',function(){
     if (timerAudio.muted){
         volumeIcon.className="fas fa-volume-mute fa-2x col-2 p-0";
@@ -152,3 +153,28 @@ volumeIcon.addEventListener('click',function(){
 
     
 })
+
+let videoShuffleBtn= document.getElementById("video-shuffle-btn");
+videoShuffleBtn.addEventListener('click',function(){
+    chooseVid();
+})
+
+function chooseVid(){
+    var videoStorage = [ 
+        'video/video1.mp4',
+        'video/video2.mp4',
+        'video/vid3.mp4',
+        'video/vid4.mp4',
+        'video/vid5.mp4',
+        'video/vid6.mp4',
+        'video/vid7.mp4'
+        ],
+            video = document.querySelector('video'),
+            // choose one random url from our storage as the active video
+            activeVideo = videoStorage[Math.round(Math.random() * (videoStorage.length - 1))];        
+        
+        // check which file extension your browser can play and set the video source accordingly
+         video.setAttribute('src', activeVideo);
+}
+
+

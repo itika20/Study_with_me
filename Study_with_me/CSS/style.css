@@ -8,12 +8,12 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
-.w-20{
-    width: 20%;
+.w-16{
+    width: 16%;
 }
 
-.w-12{
-    width: 12%;
+.w-10{
+    width: 10%;
 }
 
 ::placeholder{
@@ -24,18 +24,18 @@ body{
 /* ################ UTILITY CLASSES #################### */
 
 span{
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 400;
 }
 
 p{
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 600;
 }
 
 i{
-    color:#c9c9c9;
-    margin: 10px;
+    color:#999999;
+    margin: 5px;
 }
 
 label{
@@ -45,10 +45,10 @@ label{
 
 .btn{
     border-radius: 50px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     margin: 10px;
-    width: 120px;
+    width: 80px;
     height: 35px;
 }
 
@@ -64,18 +64,11 @@ label{
     margin: 20px;
 }
 
-.pomodoro{
- margin: 10px 0px;
-}
-.break{
- margin: 10px 0px;
-}
-
 .time-section{
-margin: 10px 0px;
+margin: 10px 0px 0px 0px ;
 }
 .break-section{
-margin: 10px 0px;
+margin: 10px 0px 0px 0px;
 }
 
 /* ################ Timer Settings menu #################### */
@@ -85,10 +78,14 @@ margin: 10px 0px;
     border-radius: 10px;
     position: absolute;
     top:0px;
-    left:450px;
+    left:350px;
     visibility: hidden;
 }
 
+.menu span{
+    font-size: 18px;
+    font-weight: 600;
+}
 .menu.active{
     visibility: visible;
 }
@@ -103,10 +100,10 @@ margin: 10px 0px;
 }
 
 .p_sets{
-    padding: 20px 0px;
+    padding-top: 15px;
 }
 .b_sets{
-    padding: 15px 0px;
+    padding-top: 15px;
 }
 
 .input-style{
@@ -114,23 +111,37 @@ margin: 10px 0px;
     border: none;
     outline: none;
     border-radius: 10px;
-    font-size: 14px;
-    font-weight: 600;
-    width: 65px;
+    font-size: 12px;
+    font-weight: 400;
+    width: 52px;
 }
 
 .timer-volume{
-    padding: 20px 0px;
+    padding-top: 40px;
 }
 
 
 /* video section */
 .vid{
     position: fixed;
-    left:400px;
+    left:300px;
     top:-100px;
     background-repeat: no-repeat;
     object-fit: contain;
     z-index: -20;
-    
+}
+
+.video-buttons-box{
+    position: fixed;
+    right:0px;
+    bottom: 0px;
+    margin: 15px;
+    width: 400px;
+}
+
+.video-buttons-box-style{
+    border-radius: 10px;
+    margin: 10px;
+    height: 40px;
+    z-index: 2;
 }
