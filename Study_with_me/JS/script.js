@@ -154,11 +154,13 @@ volumeIcon.addEventListener('click',function(){
     
 })
 
+//Video Changing Fuctionality
+
 let videoShuffleBtn= document.getElementById("video-shuffle-btn");
 videoShuffleBtn.addEventListener('click',function(){
     chooseVid();
 })
-
+let vidCounter=0;
 function chooseVid(){
     var videoStorage = [ 
         'video/video1.mp4',
@@ -169,12 +171,49 @@ function chooseVid(){
         'video/vid6.mp4',
         'video/vid7.mp4'
         ],
-            video = document.querySelector('video'),
+            video = document.querySelector('video');
             // choose one random url from our storage as the active video
-            activeVideo = videoStorage[Math.round(Math.random() * (videoStorage.length - 1))];        
+            activeVideo = videoStorage[vidCounter];    
+            (vidCounter<videoStorage.length-1) ? vidCounter++ : vidCounter=0;  
+
         
         // check which file extension your browser can play and set the video source accordingly
          video.setAttribute('src', activeVideo);
 }
 
+//Fullscreen button
 
+let videoFullscreenBtn=document.getElementById("video-fullscreen-btn");
+videoFullscreenBtn.addEventListener('click',function(){
+    toggleFullscreen();
+})
+
+var db, isfullscreen = false;
+function toggleFullscreen(){
+	db = document.body;
+	if(isfullscreen == false){
+		if(db.requestFullScreen){
+		    db.requestFullScreen();
+		} else if(db.webkitRequestFullscreen){
+		    db.webkitRequestFullscreen();
+		} else if(db.mozRequestFullScreen){
+		    db.mozRequestFullScreen();
+		} else if(db.msRequestFullscreen){
+		    db.msRequestFullscreen();
+		}
+		isfullscreen = true;
+	} else {
+		if(document.cancelFullScreen){
+		    document.cancelFullScreen();
+		} else if(document.exitFullScreen){
+		    document.exitFullScreen();
+		} else if(document.mozCancelFullScreen){
+		    document.mozCancelFullScreen();
+		} else if(document.webkitCancelFullScreen){
+		    document.webkitCancelFullScreen();
+		} else if(document.msExitFullscreen){
+		    document.msExitFullscreen();
+		}
+		isfullscreen = false;
+	}
+}
